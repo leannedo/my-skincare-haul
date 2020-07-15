@@ -1,6 +1,7 @@
 export default {
     backgroundColor: '#FFFFFF',
-    primaryColor: '#FFD100',
-    primaryTextColor: '#2C3242',
-    secondaryColor: '#BDE0E8'
+    primaryColor: '#ff5d7e',
+    primaryTextColor: '#2c3242',
+    secondaryColor: '#eaf5f8',
+    borderColor: '#cfd9ed'
 }
