@@ -5,11 +5,28 @@ import { PlusOutlined } from "@ant-design/icons";
 import { StyleSheet, css } from "aphrodite";
 
 class Dashboard extends Component {
+  state = {
+    products: [
+      {
+        id: "a1",
+        name: "Paula's Choice BHA",
+        category: "exfoliate",
+        image: "../../../assets/cosmetic_bottle.jpg",
+      },
+      {
+        id: "a2",
+        name: "Cerave Cleanser",
+        category: "cleanser",
+        image: "../../../assets/cosmetic_bottle.jpg",
+      },
+    ],
+  };
+
   render() {
     return (
       <div className={css(styles.container)}>
         <h1 className={css(styles.title)}>Dashboard</h1>
-        <ProductList products={Array.from(Array(100).keys())} />
+        <ProductList products={this.state.products} />
         <Button
           type="primary"
           shape="circle"

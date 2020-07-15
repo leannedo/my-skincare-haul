@@ -1,17 +1,17 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import { Row, Col } from "antd";
+import { Empty } from "antd";
 
 const ProductList = ({ products }) => {
   const renderProducts = (products) => {
     if (!products) {
-      return;
+      return <Empty />;
     }
-    const [a, ...rest] = products;
 
     return products.map((el, i) => (
-      <Col className="gutter-row" span={6} key={i}>
-        <ProductCard {...rest} />
+      <Col className="gutter-row" span={6} key={el.id}>
+        <ProductCard {...el} />
       </Col>
     ));
   };
