@@ -11,13 +11,15 @@ class Dashboard extends Component {
         id: "a1",
         name: "Paula's Choice BHA",
         category: "exfoliate",
-        image: "../../../assets/cosmetic_bottle.jpg",
+        image: "cosmetic_bottle.jpg",
+        targets: ["acne", "pore"],
       },
       {
         id: "a2",
         name: "Cerave Cleanser",
         category: "cleanser",
-        image: "../../../assets/cosmetic_bottle.jpg",
+        image: "cosmetic_bottle.jpg",
+        targets: ["oily skin", "sebum"],
       },
     ],
   };
