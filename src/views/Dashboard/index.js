@@ -3,25 +3,85 @@ import ProductList from "../../components/ProductList";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { StyleSheet, css } from "aphrodite";
+import Modal from "../../components/Layout/Modal/index";
+import Form from "../../components/Form/index";
 
 class Dashboard extends Component {
   state = {
     products: [
       {
         id: "a1",
-        name: "Paula's Choice BHA",
+        product_name: "Paula's Choice BHA",
+        // category: {
+        //   id: "1",
+        //   technical_name: "makeup_remover",
+        //   name: "Makeup Remover",
+        // },
         category: "exfoliate",
-        image: "cosmetic_bottle.jpg",
+        image: "001-serum.svg",
         targets: ["acne", "pore"],
       },
       {
         id: "a2",
-        name: "Cerave Cleanser",
+        product_name: "Cerave Cleanser",
         category: "cleanser",
-        image: "cosmetic_bottle.jpg",
+        image: "001-serum.svg",
         targets: ["oily skin", "sebum"],
       },
     ],
+    categories: [
+      {
+        id: "1",
+        technical_name: "makeup_remover",
+        name: "Makeup Remover",
+      },
+      {
+        id: "1",
+        technical_name: "makeup_remover",
+        name: "Makeup Remover",
+      },
+    ],
+    productFormData: {},
+    showModal: false,
+  };
+
+  // fetchProducts = () => {
+  //   // Todo calling API
+  //
+  //   const result = [];
+  //
+  //   // const products = mapProducts(result);
+  //   // this.setState({ products: products });
+  // };
+  //
+  // mapProducts = (products) => {
+  //   // return products.map(el => el);
+  //   // return [];
+  // };
+  //
+  // getFormData = (formData) => {
+  //   this.setState();
+  // };
+  //
+  putProducts = (formData) => {
+    const productData = this.getFormData();
+
+    // TODO: PUT to api
+
+    const res = {};
+
+    this.setState({ products: [...this.state.products, res] });
+  };
+
+  // removeProduct = (productId) => {
+  //   // TODO: DELETE to api
+  // };
+  showModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  closeModal = () => {
+    this.setState({ showModal: false });
   };
 
   render() {
@@ -35,7 +95,19 @@ class Dashboard extends Component {
           icon={<PlusOutlined className={css(styles.addIcon)} />}
           size="large"
           className={css(styles.addButton)}
+          onClick={this.showModal}
         />
+
+        <Modal
+          title="New Product"
+          visibility={this.state.showModal}
+          close={this.closeModal}
+          width="60%"
+          footer={null}
+          wrapClassName="product-edit-modal"
+        >
+          <Form />
+        </Modal>
       </div>
     );
   }

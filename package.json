@@ -11,9 +11,11 @@
     "antd": "^4.4.2",
     "aphrodite": "^2.4.0",
     "craco-less": "^1.17.0",
+    "moment": "^2.27.0",
     "rc-tween-one": "^2.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-inline-editing": "^1.0.10",
     "react-scripts": "3.4.1"
   },
   "scripts": {

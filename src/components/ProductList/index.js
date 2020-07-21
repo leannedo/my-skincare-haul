@@ -10,7 +10,7 @@ const ProductList = ({ products }) => {
     }
 
     return products.map((el, i) => (
-      <Col className="gutter-row" span={6} key={el.id}>
+      <Col key={el.id} className="gutter-row" span={6}>
         <ProductCard {...el} />
       </Col>
     ));

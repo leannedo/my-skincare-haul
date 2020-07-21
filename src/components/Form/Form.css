@@ -1,0 +1,57 @@
+.msh-form-input-group {
+    display: flex;
+    padding: 8px 32px 24px;
+}
+
+.msh-product-cover {
+    width: 150px;
+    height: 150px;
+    background: #eaf5f8;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px
+}
+
+.msh-product-cover img {
+    width: 60%;
+}
+
+.ant-select-selection-item-content {
+    font-size: 1rem;
+}
+
+.ant-input {
+    font-size: 1rem;
+}
+
+.product-form-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-form-input label {
+    margin-right: 16px;
+    min-width: 150px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-edit-modal .ant-modal-body {
+    padding: 0
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.input-editing {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.input {
+    border: none;
+}

@@ -6,15 +6,25 @@ import { Tag } from "antd";
 
 const { Meta } = Card;
 
-const ProductCard = ({ id, name, category, image, targets }) => (
+const ProductCard = ({ id, product_name, category, image, targets }) => (
   <Card
-    style={{ width: 300, position: "relative" }}
-    cover={<img alt="example" src={require(`../../../assets/${image}`)} />}
+    key={id}
+    style={{ position: "relative" }}
+    cover={
+      <div style={{ background: "#eaf5f8", padding: 50 }}>
+        <img alt="example" src={require(`../../../assets/${image}`)} />
+      </div>
+    }
   >
     <Controls className={css(styles.controls)} />
-    <Meta title={name} description={category} />
+    <Meta title={product_name} description={category} />
     <div className={css(styles.tags)}>
-      {targets && targets.map((el) => <Tag color="#87d068">{el}</Tag>)}
+      {targets &&
+        targets.map((el) => (
+          <Tag key={el + "1"} color="#87d068">
+            {el}
+          </Tag>
+        ))}
     </div>
   </Card>
 );
@@ -33,8 +43,8 @@ const styles = StyleSheet.create({
   },
   controls: {
     position: "absolute",
-    top: 20,
-    right: 20,
+    top: 6,
+    right: 10,
   },
   tags: {
     marginTop: 16,

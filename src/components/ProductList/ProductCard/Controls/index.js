@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, Dropdown } from "antd";
-import { DownOutlined, EllipsisOutlined } from "@ant-design/icons";
+import { EllipsisOutlined } from "@ant-design/icons";
 import { StyleSheet, css } from "aphrodite";
 
 const menu = (
@@ -15,9 +15,13 @@ const menu = (
   </Menu>
 );
 
-const controls = ({ className }) => (
+const Controls = ({ className }) => (
   <Dropdown overlay={menu} trigger={["click"]} className={className}>
-    <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+    <a
+      href="/"
+      className="ant-dropdown-link"
+      onClick={(e) => e.preventDefault()}
+    >
       <EllipsisOutlined className={css(styles.ellipsis)} />
     </a>
   </Dropdown>
@@ -29,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default controls;
+export default Controls;

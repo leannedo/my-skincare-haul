@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.less';
-import App_Layout from "./components/Layout/index";
+import React from "react";
+import "./App.less";
+import Layout from "./components/Layout/index";
 
 function App() {
   return (
     <div className="App">
-        <App_Layout/>
+      <Layout />
     </div>
   );
 }

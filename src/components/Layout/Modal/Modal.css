@@ -1,0 +1,22 @@
+:root {
+    --main-bg-color: #ff5d7e;
+}
+.ant-modal-content {
+    border-radius: 10px;
+}
+.ant-modal-header {
+    border: none;
+    padding: 24px 32px;
+}
+.ant-modal-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.ant-modal-footer {
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.ant-modal-body {
+    padding: 8px 32px 24px;
+}
