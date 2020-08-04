@@ -11,7 +11,7 @@ const menu = (
     <Menu.Item key="1">
       <a href="/">Duplicate</a>
     </Menu.Item>
-    <Menu.Item key="3">Delete</Menu.Item>
+    <Menu.Item key="2">Delete</Menu.Item>
   </Menu>
 );
 

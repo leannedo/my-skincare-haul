@@ -3,15 +3,15 @@ import ProductCard from "./ProductCard";
 import { Row, Col } from "antd";
 import { Empty } from "antd";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products = [] }) => {
   const renderProducts = (products) => {
-    if (!products) {
+    if (!products || !products.length) {
       return <Empty />;
     }
 
-    return products.map((el, i) => (
-      <Col key={el.id} className="gutter-row" span={6}>
-        <ProductCard {...el} />
+    return products.map((product) => (
+      <Col key={product.id} className="gutter-row" span={6}>
+        <ProductCard {...product} />
       </Col>
     ));
   };

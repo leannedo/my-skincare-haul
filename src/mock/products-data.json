@@ -1,0 +1,24 @@
+[
+  {
+    "id": "6fd2a7ae-137d-45e0-bdbd-6c16725b35a2",
+    "product_name": "Paula's Choice BHA",
+     "category": {
+       "id": "50dee4d2-28bc-46b4-a627-0d8f4c952f6e",
+       "technical_name": "makeup_remover",
+       "name": "Makeup Remover"
+     },
+    "image": "001-serum.svg",
+    "targets": ["acne", "pore"]
+  },
+  {
+    "id": "efc2a949-b72c-4e92-bcfb-68a5eacc084e",
+    "product_name": "Cerave Cleanser",
+    "category": {
+      "id": "62c07ef9-8163-435f-8f69-94fc6024b206",
+      "technical_name": "cleanser",
+      "name": "Cleanser"
+    },
+    "image": "001-serum.svg",
+    "targets": ["oily skin", "sebum"]
+  }
+]

@@ -17,7 +17,7 @@ const ProductCard = ({ id, product_name, category, image, targets }) => (
     }
   >
     <Controls className={css(styles.controls)} />
-    <Meta title={product_name} description={category} />
+    <Meta title={product_name} description={category.name} />
     <div className={css(styles.tags)}>
       {targets &&
         targets.map((el) => (
