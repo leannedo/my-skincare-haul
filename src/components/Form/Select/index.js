@@ -12,7 +12,6 @@ const Select = ({
 }) => {
   const onMultipleSelect = (selectedValue) => {
     const currentValue = value || [];
-    // value will get from backend in edit mode, at the beginning it will be an empty array
     const updatedValue = [...currentValue, selectedValue];
     changedHandler(updatedValue, name);
   };

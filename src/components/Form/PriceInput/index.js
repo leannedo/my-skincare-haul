@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InputNumber } from "antd";
 
-const PriceInput = ({ name, label, defaultValue, changedHandler }) => {
+const PriceInput = ({ name, label, value, defaultValue, changedHandler }) => {
   const [isEditing, setIsEditing] = useState(false);
   return (
     <div className="product-form-input">
@@ -13,6 +13,7 @@ const PriceInput = ({ name, label, defaultValue, changedHandler }) => {
         <span> &#8364; </span>
         <InputNumber
           id={name}
+          value={value}
           step={0.1}
           min={0.0}
           defaultValue={defaultValue}

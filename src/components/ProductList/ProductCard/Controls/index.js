@@ -3,17 +3,19 @@ import { Menu, Dropdown } from "antd";
 import { EllipsisOutlined } from "@ant-design/icons";
 import { StyleSheet, css } from "aphrodite";
 
-const menu = (
-  <Menu>
-    <Menu.Item key="0">
-      <a href="/">Edit</a>
-    </Menu.Item>
-    <Menu.Item key="1">
-      <a href="/">Duplicate</a>
-    </Menu.Item>
-    <Menu.Item key="2">Delete</Menu.Item>
-  </Menu>
-);
+const menu = () => {
+  return (
+    <Menu>
+      <Menu.Item key="0">
+        <a>Edit</a>
+      </Menu.Item>
+      <Menu.Item key="1">
+        <a href="/">Duplicate</a>
+      </Menu.Item>
+      <Menu.Item key="2">Delete</Menu.Item>
+    </Menu>
+  );
+};
 
 const Controls = ({ className }) => (
   <Dropdown overlay={menu} trigger={["click"]} className={className}>

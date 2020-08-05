@@ -5,56 +5,47 @@ import PriceInput from "../Form/PriceInput/index";
 import Select from "../Form/Select/index";
 import "./Form.css";
 import { Button } from "antd";
-import formControls from "../../mock/form-controls.json";
+import initialFormControls from "./form-controls.js";
+import validate from "./validation";
+import { useDashboard } from "../../hooks/dashboard-hooks";
 
 const Form = () => {
-  const [form] = useState(formControls);
+  const { addProduct, editProduct } = useDashboard();
 
-  // const inputChangedHandler = (value, name) => {
-  //   const updatedFormControls = { ...this.state.formControls };
-  //   const updatedFormElement = { ...updatedFormControls[name] };
-  //
-  //   // update value
-  //   updatedFormElement.value = value;
-  //   updatedFormElement.touched = true;
-  //   updatedFormElement.valid = validate(
-  //     value,
-  //     updatedFormElement.validationRules
-  //   );
-  //
-  //   updatedFormControls[name] = updatedFormElement;
-  //
-  //   // update form state
-  //   let formIsValid = true;
-  //   formIsValid = Object.entries(updatedFormControls).every(
-  //     ([key, value]) => value.valid && formIsValid
-  //   );
-  //
-  //   this.setState({
-  //     formControls: updatedFormControls,
-  //     formIsValid: formIsValid,
-  //   });
-  // };
-  //
-  // const updateOptionHandler = (newOption, name) => {
-  //   const { formControls } = this.state;
-  //   const updatedFormControls = { ...formControls };
-  //   const formElement = { ...updatedFormControls[name] };
-  //
-  //   // update options
-  //   formElement.options = [...formElement.options, newOption];
-  //
-  //   updatedFormControls[name] = formElement;
-  //   this.setState({ formControls: updatedFormControls });
-  // };
-  //
-  // const sendFormData = () => {
-  //   const productData = {};
-  // };
-  //
-  // const formSubmitHandler = () => {
-  //   alert("Success");
-  // };
+  const [form, setForm] = useState(initialFormControls);
+  const [formValid, setFormValid] = useState(false);
+
+  const inputChangedHandler = (value, name) => {
+    const updatedFormElement = { ...form[name] };
+    updatedFormElement.value = value;
+    updatedFormElement.touched = true;
+    updatedFormElement.valid = validate(
+      value,
+      updatedFormElement.validationRules
+    );
+
+    setForm({ ...form, [name]: updatedFormElement });
+    setFormValid(checkFormValid());
+  };
+
+  const checkFormValid = () => {
+    let formValid = true;
+    return Object.entries(form).every(
+      ([key, value]) => value.valid && formValid
+    );
+  };
+
+  const resetForm = () => {
+    setForm(initialFormControls);
+  };
+
+  const formSubmitHandler = (e) => {
+    if (!formValid) {
+      return;
+    }
+
+    addProduct(form, resetForm);
+  };
 
   const {
     product_name,
@@ -65,8 +56,6 @@ const Form = () => {
     target_treatment,
   } = form;
 
-  console.log(form);
-
   return (
     <div className="msh-form-container">
       <div className="msh-form-input-group">
@@ -74,15 +63,15 @@ const Form = () => {
           <img alt="example" src={require(`../../assets/prism.svg`)} />
         </div>
         <div className="product-form">
-          <TextInput {...product_name} />
-          <TextInput {...brand} />
-          <PriceInput {...product_price} />
-          <Date {...start_date} />
-          <Select {...category} />
-          <Select {...target_treatment} />
+          <TextInput {...product_name} changedHandler={inputChangedHandler} />
+          <TextInput {...brand} changedHandler={inputChangedHandler} />
+          <PriceInput {...product_price} changedHandler={inputChangedHandler} />
+          <Date {...start_date} changedHandler={inputChangedHandler} />
+          <Select {...category} changedHandler={inputChangedHandler} />
+          <Select {...target_treatment} changedHandler={inputChangedHandler} />
         </div>
       </div>
-      <Button key="submit" type="primary">
+      <Button key="submit" type="primary" onClick={formSubmitHandler}>
         Create Product
       </Button>
     </div>

@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { AutoComplete, Input } from "antd";
 import "../Form.css";
 
-const TextInput = ({
-  name,
-  label,
-  // valid,
-  // touched,
-  placeholder,
-  changedHandler,
-}) => {
+const TextInput = ({ name, label, value, placeholder, changedHandler }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
@@ -18,6 +11,7 @@ const TextInput = ({
       <AutoComplete
         name={name}
         id={name}
+        value={value}
         onChange={(value) => changedHandler(value, name)}
         onFocus={() => setIsEditing(true)}
         onBlur={() => setIsEditing(false)}

@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import ProductList from "../../components/ProductList";
 import { StyleSheet, css } from "aphrodite";
-import productsData from "./../../mock/products-data.json";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import Modal from "../../components/Layout/Modal";
 import Form from "../../components/Form";
+import { useDashboard } from "../../hooks/dashboard-hooks";
 
 const Dashboard = () => {
-  const [products] = useState(productsData);
-  const [showModal, setShowModal] = useState(false);
+  const { showModalHandler, closeModalHandler, showModal } = useDashboard();
 
   return (
     <div className={css(styles.container)}>
       <h1 className={css(styles.title)}>Dashboard</h1>
-      <ProductList products={products} />
+      <ProductList />
       <Button
         type="primary"
         shape="circle"
         icon={<PlusOutlined className={css(styles.addIcon)} />}
         size="large"
         className={css(styles.addButton)}
-        onClick={() => setShowModal(true)}
+        onClick={() => showModalHandler()}
       />
       <Modal
+        title="New Product"
         visibility={showModal}
-        close={() => setShowModal(false)}
+        close={() => closeModalHandler()}
         width="60%"
         footer={null}
         wrapClassName="product-edit-modal"

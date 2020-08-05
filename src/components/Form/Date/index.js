@@ -2,7 +2,7 @@ import React from "react";
 import { DatePicker } from "antd";
 import moment from "moment";
 
-const Date = ({ name, label, defaultValue, changedHandler }) => {
+const Date = ({ name, label, value, changedHandler }) => {
   const dateFormat = "DD/MM/YYYY";
   const currentDate = moment();
   return (
@@ -12,7 +12,7 @@ const Date = ({ name, label, defaultValue, changedHandler }) => {
       <DatePicker
         id={name}
         name={name}
-        defaultValue={defaultValue || currentDate}
+        value={value || currentDate}
         format={dateFormat}
         bordered={false}
         allowClear={false}

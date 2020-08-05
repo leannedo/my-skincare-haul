@@ -9,6 +9,7 @@ import {
   StarOutlined,
   StopOutlined,
 } from "@ant-design/icons";
+import DashboardProvider from "../../hooks/dashboard-hooks";
 
 const { Content, Sider } = AntLayout;
 
@@ -64,7 +65,9 @@ const Layout = () => {
       </Sider>
       <AntLayout className="site-layout">
         <Content style={{ margin: "0 16px" }}>
-          <Dashboard />
+          <DashboardProvider>
+            <Dashboard />
+          </DashboardProvider>
         </Content>
       </AntLayout>
     </AntLayout>

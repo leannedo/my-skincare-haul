@@ -2,19 +2,27 @@ import React from "react";
 import { Modal as AntModal } from "antd";
 import "./Modal.css";
 
-const Modal = (props) => {
+const Modal = ({
+  title,
+  visibility,
+  close,
+  footer,
+  width,
+  wrapClassName,
+  children,
+}) => {
   return (
     <>
       <AntModal
         centered
-        title={props.title}
-        visible={props.visibility}
-        onCancel={props.close}
-        footer={props.footer}
-        width={props.width}
-        wrapClassName={props.wrapClassName}
+        title={title}
+        visible={visibility}
+        onCancel={close}
+        footer={footer}
+        width={width}
+        wrapClassName={wrapClassName}
       >
-        {props.children}
+        {children}
       </AntModal>
     </>
   );

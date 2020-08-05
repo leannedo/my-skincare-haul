@@ -2,8 +2,11 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { Row, Col } from "antd";
 import { Empty } from "antd";
+import { useDashboard } from "../../hooks/dashboard-hooks";
 
-const ProductList = ({ products = [] }) => {
+const ProductList = () => {
+  const { products } = useDashboard();
+
   const renderProducts = (products) => {
     if (!products || !products.length) {
       return <Empty />;
