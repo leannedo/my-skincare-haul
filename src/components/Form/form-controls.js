@@ -15,7 +15,7 @@ export default {
     name: "brand",
     label: "BRAND",
     placeholder: "Input product's brand",
-    valid: false,
+    valid: true,
     value: "",
     touched: false,
     validationRules: {
@@ -60,6 +60,7 @@ export default {
     name: "category",
     label: "CATEGORY",
     placeholder: "Select category",
+
     options: [
       {
         value: "cleanser",

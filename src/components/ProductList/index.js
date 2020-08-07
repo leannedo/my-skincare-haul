@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { Row, Col } from "antd";
 import { Empty } from "antd";
-import { useDashboard } from "../../hooks/dashboard-hooks";
+import { useDashboard } from "../../context/dashboard-hooks";
 
 const ProductList = () => {
   const { products } = useDashboard();

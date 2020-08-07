@@ -1,6 +1,7 @@
 :root {
     --main-bg-color: #ff5d7e;
 }
+
 .ant-modal-content {
     border-radius: 10px;
 }

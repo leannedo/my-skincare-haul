@@ -5,10 +5,10 @@ import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import Modal from "../../components/Layout/Modal";
 import Form from "../../components/Form";
-import { useDashboard } from "../../hooks/dashboard-hooks";
+import { useDashboard } from "../../context/dashboard-hooks";
 
 const Dashboard = () => {
-  const { showModalHandler, closeModalHandler, showModal } = useDashboard();
+  const { createProduct, closeModalHandler, isModalShown } = useDashboard();
 
   return (
     <div className={css(styles.container)}>
@@ -20,11 +20,11 @@ const Dashboard = () => {
         icon={<PlusOutlined className={css(styles.addIcon)} />}
         size="large"
         className={css(styles.addButton)}
-        onClick={() => showModalHandler()}
+        onClick={() => createProduct()}
       />
       <Modal
         title="New Product"
-        visibility={showModal}
+        visibility={isModalShown}
         close={() => closeModalHandler()}
         width="60%"
         footer={null}

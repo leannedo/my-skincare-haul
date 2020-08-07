@@ -4,11 +4,12 @@
     "product_name": "Paula's Choice BHA",
      "category": {
        "id": "50dee4d2-28bc-46b4-a627-0d8f4c952f6e",
-       "technical_name": "makeup_remover",
-       "name": "Makeup Remover"
+       "technical_name": "toner",
+       "name": "Toner"
      },
     "image": "001-serum.svg",
-    "targets": ["acne", "pore"]
+    "target_treatment": ["acne", "pore"],
+    "brand": "Paula's Choice"
   },
   {
     "id": "efc2a949-b72c-4e92-bcfb-68a5eacc084e",
@@ -19,6 +20,6 @@
       "name": "Cleanser"
     },
     "image": "001-serum.svg",
-    "targets": ["oily skin", "sebum"]
+    "target_treatment": ["oily_skin", "sebum"]
   }
 ]

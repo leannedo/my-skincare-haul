@@ -1,33 +1,38 @@
-import React from "react";
-import { Menu, Dropdown } from "antd";
+import React, { useState } from "react";
+import { Dropdown } from "antd";
 import { EllipsisOutlined } from "@ant-design/icons";
 import { StyleSheet, css } from "aphrodite";
+import ControlMenu from "./Menu";
 
-const menu = () => {
+const Controls = ({ className, id }) => {
+  const [visible, setVisible] = useState(false);
+
+  const handleVisibleChange = (state) => {
+    setVisible(state);
+  };
+
+  const handleMenuClick = (e) => {
+    setVisible(false);
+  };
+
   return (
-    <Menu>
-      <Menu.Item key="0">
-        <a>Edit</a>
-      </Menu.Item>
-      <Menu.Item key="1">
-        <a href="/">Duplicate</a>
-      </Menu.Item>
-      <Menu.Item key="2">Delete</Menu.Item>
-    </Menu>
+    <Dropdown
+      overlay={<ControlMenu id={id} handleMenuClick={handleMenuClick} />}
+      trigger={["click"]}
+      onVisibleChange={handleVisibleChange}
+      visible={visible}
+      className={className}
+    >
+      <a
+        href="/"
+        className="ant-dropdown-link"
+        onClick={(e) => e.preventDefault()}
+      >
+        <EllipsisOutlined className={css(styles.ellipsis)} />
+      </a>
+    </Dropdown>
   );
 };
-
-const Controls = ({ className }) => (
-  <Dropdown overlay={menu} trigger={["click"]} className={className}>
-    <a
-      href="/"
-      className="ant-dropdown-link"
-      onClick={(e) => e.preventDefault()}
-    >
-      <EllipsisOutlined className={css(styles.ellipsis)} />
-    </a>
-  </Dropdown>
-);
 
 const styles = StyleSheet.create({
   ellipsis: {

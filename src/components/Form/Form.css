@@ -27,6 +27,11 @@
     font-size: 1rem;
 }
 
+.product-form-wrapper {
+    min-height: 350px;
+    flex: 1;
+}
+
 .product-form-input {
     display: flex;
     align-items: center;
@@ -54,4 +59,8 @@
 
 .input {
     border: none;
+}
+
+.ant-btn-primary {
+    width: 100%
 }

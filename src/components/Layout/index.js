@@ -9,7 +9,7 @@ import {
   StarOutlined,
   StopOutlined,
 } from "@ant-design/icons";
-import DashboardProvider from "../../hooks/dashboard-hooks";
+import DashboardProvider from "../../context/dashboard-hooks";
 
 const { Content, Sider } = AntLayout;
 

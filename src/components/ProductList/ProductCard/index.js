@@ -6,7 +6,13 @@ import { Tag } from "antd";
 
 const { Meta } = Card;
 
-const ProductCard = ({ id, product_name, category, image, targets }) => (
+const ProductCard = ({
+  id,
+  image,
+  product_name,
+  category,
+  target_treatment,
+}) => (
   <Card
     key={id}
     style={{ position: "relative" }}
@@ -16,11 +22,11 @@ const ProductCard = ({ id, product_name, category, image, targets }) => (
       </div>
     }
   >
-    <Controls className={css(styles.controls)} />
+    <Controls className={css(styles.controls)} id={id} />
     <Meta title={product_name} description={category.name} />
     <div className={css(styles.tags)}>
-      {targets &&
-        targets.map((el) => (
+      {target_treatment &&
+        target_treatment.map((el) => (
           <Tag key={el + "1"} color="#87d068">
             {el}
           </Tag>
