@@ -11,6 +11,7 @@
     "antd": "^4.4.2",
     "aphrodite": "^2.4.0",
     "craco-less": "^1.17.0",
+    "express": "^4.17.1",
     "moment": "^2.27.0",
     "rc-tween-one": "^2.7.2",
     "react": "^16.13.1",
@@ -21,7 +22,7 @@
   },
   "scripts": {
     "serve": "serve -s build",
-    "start": "craco build",
+    "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
