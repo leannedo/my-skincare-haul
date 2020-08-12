@@ -20,7 +20,7 @@
     "react-uuid": "^1.0.2"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "craco build",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
