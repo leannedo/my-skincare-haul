@@ -4,8 +4,8 @@
     "product_name": "Paula's Choice BHA",
      "category": {
        "id": "50dee4d2-28bc-46b4-a627-0d8f4c952f6e",
-       "technical_name": "toner",
-       "name": "Toner"
+       "technical_name": "exfoliate",
+       "name": "Exfoliate"
      },
     "image": "001-serum.svg",
     "target_treatment": ["acne", "pore"],
@@ -21,5 +21,38 @@
     },
     "image": "001-serum.svg",
     "target_treatment": ["oily_skin", "sebum"]
+  },
+  {
+    "id": "da24fa86-7511-44d4-b0ad-fde2b4830a7e",
+    "product_name": "Paula's Choice Niacinamide",
+    "category": {
+      "id": "62c07ef9-8163-435f-8f69-94fc6024b206",
+      "technical_name": "serum",
+      "name": "Serum"
+    },
+    "image": "001-serum.svg",
+    "target_treatment": ["oily_skin", "sebum", "wrinkle"]
+  },
+  {
+    "id": "2fae9ba4-e123-11ea-87d0-0242ac130003",
+    "product_name": "Cerave Moisturizer",
+    "category": {
+      "id": "62c07ef9-8163-435f-8f69-94fc6024b206",
+      "technical_name": "moisturizer",
+      "name": "Moisturizer"
+    },
+    "image": "001-serum.svg",
+    "target_treatment": ["oily_skin"]
+  },
+  {
+    "id": "4a7ed0d4-e123-11ea-87d0-0242ac130003",
+    "product_name": "Lumene Vitamin C",
+    "category": {
+      "id": "62c07ef9-8163-435f-8f69-94fc6024b206",
+      "technical_name": "serum",
+      "name": "Serum"
+    },
+    "image": "001-serum.svg",
+    "target_treatment": ["oily_skin", "sebum", "dark spots"]
   }
 ]
