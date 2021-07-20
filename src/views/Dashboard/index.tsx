@@ -3,7 +3,7 @@ import ProductList from "../../components/ProductList";
 import { StyleSheet, css } from "aphrodite";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import Modal from "../../components/Layout/Modal";
+import Modal from "../../components/Modal";
 import Form from "../../components/Form";
 import { useDashboard } from "../../context/dashboard-hooks";
 

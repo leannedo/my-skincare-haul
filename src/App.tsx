@@ -1,11 +1,11 @@
 import React from "react";
-// import "./App.less";
-// import Layout from "./components/Layout/index";
+import Layout from "./components/Layout/index";
+import './styles/variables.scss';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Layout/>
     </div>
   );
 };
